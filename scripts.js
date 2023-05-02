@@ -1,21 +1,37 @@
 const botao = document.getElementById('mostrar-formulario');
 const formulario = document.getElementById('formulario');
-const botaoEnviar = document.getElementById('blt-enviar')
+const botaoEnviar = document.getElementById('blt-enviar');
+let linhas = '';
 
-botao.addEventListener('click', function() {
+botao.addEventListener('click', function () {
   formulario.style.display = 'block';
 });
 
-botaoEnviar.addEventListener("click", function(){
-  const nomeContato = document.getElementById('nome')
-  
-  
+formulario.addEventListener("submit", function (e) {
+  e.preventDefault();
+  Crialinhas();
+  AtualizaTabela();
+});
 
-  const TelefoneContato = document.getElementById('tel')
-  
-  
+function Crialinhas() {
+  let inputNome = document.getElementById('nome');
+  let inputTele = document.getElementById('tel');
 
-  alert(`Nome:${nomeContato.value} Telefone:${TelefoneContato.value}`)
+  let linha = '<tr>';
+  linha += `<td>${inputNome.value}</td>`;
+  linha += `<td>${inputTele.value}</td>`;
+  linha += '</tr>';
 
-  
-})
+  linhas += linha;
+
+  inputNome.value = '';
+  inputTele.value = '';
+}
+
+function AtualizaTabela() {
+  const CorpoTabela = document.querySelector('tbody')
+  CorpoTabela.innerHTML = linhas;
+}
+
+
+
