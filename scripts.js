@@ -3,6 +3,16 @@ const formulario = document.getElementById('formulario');
 const botaoEnviar = document.getElementById('blt-enviar');
 let linhas = '';
 
+function fechaJanela () {
+const conteiner = document.getElementById('conteiner')
+conteiner.addEventListener('click', function(e){
+  if (!formulario.contains(e.target) && !e.target.matches('.conteiner')){
+      formulario.style.display = 'nome'
+  }
+})
+
+}
+
 botao.addEventListener('click', function () {
   formulario.style.display = 'block';
 });
@@ -10,6 +20,7 @@ botao.addEventListener('click', function () {
 formulario.addEventListener("submit", function (e) {
   e.preventDefault();
   Crialinhas();
+  fechaJanela()
   AtualizaTabela();
 });
 
