@@ -28,22 +28,21 @@ function Crialinhas() {
   let inputNome = document.getElementById('nome');
   let inputTele = document.getElementById('tel');
 
-  if(NomesDeContato.includes(inputNome.value)){
-     alert(`Contato:${inputNome.value} já existe`)
-}else{
+  if (numeroDeTelefone.includes(inputTele.value)) {
+    alert(`Contato:${inputTele.value} já existe`)
+  } else {
 
- NomesDeContato.push(String(inputNome.value))
- numeroDeTelefone.push(parseInt(inputTele.value))
+    NomesDeContato.push(String(inputNome.value))
+    numeroDeTelefone.push(inputTele.value)
 
-  let linha = '<tr>';
-  linha += `<td>${inputNome.value}</td>`;
-  linha += `<td>${inputTele.value}</td>`
-  linha += '</tr>';
+    let linha = '<tr>';
+    linha += `<td>${inputNome.value}</td>`;
+    linha += `<td>${inputTele.value}</td>`
+    linha += '</tr>';
 
-  linhas += linha;
+    linhas += linha;
 
-
-}
+  }
 
   inputNome.value = '';
   inputTele.value = '';
@@ -56,7 +55,7 @@ function AtualizaTabela() {
 }
 
 
- 
+
 
 
 
