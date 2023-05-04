@@ -3,6 +3,7 @@ const formulario = document.getElementById('formulario');
 const botaoEnviar = document.getElementById('blt-enviar');
 let linhas = '';
 let numeroDeTelefone = []
+let NomesDeContato = []
 
 function FechaPopUp() {
   document.addEventListener('click', function (e) {
@@ -27,6 +28,13 @@ function Crialinhas() {
   let inputNome = document.getElementById('nome');
   let inputTele = document.getElementById('tel');
 
+  if(NomesDeContato.includes(inputNome.value)){
+     alert(`Contato:${inputNome.value} já existe`)
+}else{
+
+ NomesDeContato.push(String(inputNome.value))
+ numeroDeTelefone.push(parseInt(inputTele.value))
+
   let linha = '<tr>';
   linha += `<td>${inputNome.value}</td>`;
   linha += `<td>${inputTele.value}</td>`
@@ -34,13 +42,13 @@ function Crialinhas() {
 
   linhas += linha;
 
+
+}
+
   inputNome.value = '';
   inputTele.value = '';
 
 }
-
-
-
 
 function AtualizaTabela() {
   const CorpoTabela = document.querySelector('tbody')
@@ -48,6 +56,7 @@ function AtualizaTabela() {
 }
 
 
+ 
 
 
 
