@@ -5,17 +5,17 @@ let linhas = '';
 let numeroDeTelefone = []
 let NomesDeContato = []
 
+botao.addEventListener('click', function () {
+  formulario.style.display = 'block';
+})
+
 function FechaPopUp() {
   document.addEventListener('click', function (e) {
     if (!formulario.contains(e.target)) {
       formulario.style.display = 'none'
     }
   })
-
 }
-botao.addEventListener('click', function () {
-  formulario.style.display = 'block';
-});
 
 formulario.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -29,7 +29,7 @@ function Crialinhas() {
   let inputTele = document.getElementById('tel');
 
   if (numeroDeTelefone.includes(inputTele.value)) {
-    alert(`Contato:${inputTele.value} já existe`)
+    alert(`O número de Telefone:${inputTele.value} já existe`)
   } else {
 
     NomesDeContato.push(String(inputNome.value))
@@ -53,13 +53,3 @@ function AtualizaTabela() {
   const CorpoTabela = document.querySelector('tbody')
   CorpoTabela.innerHTML = linhas;
 }
-
-
-
-
-
-
-
-
-
-

@@ -2,6 +2,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  background-color: #ffffff;
+}
+
 .table {
     display: flex;
     justify-content: center;
@@ -52,7 +56,7 @@
   }
   
   .formulario-popup button[type="submit"] {
-    background-color: #005b82;
+    background-color: #108cc1;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -62,7 +66,7 @@
   }
   
   .formulario-popup button[type="submit"]:hover {
-    background-color: #032583;
+    background-color: #250383;
   }
 
   #mostrar-formulario {
